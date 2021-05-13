@@ -1,0 +1,162 @@
+// Spartphones
+@media (max-width: 550px) {
+    #main-nav {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+            padding: 1rem;
+        }
+    }
+
+    #header {
+        &-home {
+            height: auto;
+        }
+
+        &-inner {
+            height: auto;
+        }
+    }
+
+    // Stack grid columns
+    #home-b .process,
+    #about-b .stats,
+    #contact-b .contact-info,
+    #work-a .items {
+        grid-template-columns: 1fr;
+    }
+
+    // Home
+    #home {
+        &-a {
+            height: 90vh;
+
+            h1 {
+                padding-top: 40%;
+            }
+        }
+    }
+
+    // About
+    #about {
+        &-a {
+            .about-info {
+                grid-template-areas:
+                    "bioimage"
+                    "bio";
+            }
+        }
+
+        &-b {
+            .stats div {
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px #555 solid;
+
+                &:last-child {
+                    border: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // Contact
+    #contact {
+        &-a {
+            .text-fields {
+                grid-template-areas:
+                    "name"
+                    "subject"
+                    "email"
+                    "phone"
+                    "message";
+            }
+        }
+
+        &-b {
+            div {
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px #555 solid;
+
+                &:last-child {
+                    border: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &-c {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    // Footer
+    #main-footer {
+        height: 7rem;
+
+        .footer-content {
+            flex-direction: column;
+            padding: 1rem;
+            height: 5rem;
+        }
+    }
+}
+
+//Smaller Than 500px smartphones
+@media (max-width: 425px) {
+    #header-inner {
+        height: auto;
+    }
+
+    #header-home {
+        height: auto;
+    }
+
+    // Align navigation bar vertical instead of horizontal
+    #main-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        ul {
+            flex-direction: column;
+        }
+    }
+}
+
+// Timeline adjust box size for smaller window
+@media (max-width: 900px) {
+    #timeline-a ul li div {
+        width: 250px;
+    }
+    #timeline-a ul li:nth-child(even) div {
+        left: -284px;
+    }
+}
+
+// Timeline adjust boxes to same side for even smaller windows
+@media (max-width: 600px) {
+    #timeline-a ul li {
+        margin-left: 20px;
+    }
+    #timeline-a ul li div {
+        width: calc(100vw - 90px);
+    }
+    #timeline-a ul li:nth-child(even) div {
+        left: 40px;
+    }
+    #timeline-a ul li:nth-child(even) div:before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent $main-color transparent transparent;
+    }
+}

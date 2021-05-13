@@ -1,0 +1,469 @@
+@import "config";
+@import "utilities";
+@import "item_grid";
+
+// General styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    line-height: 1.6;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    // Set the text color depending on background using function in _config.scss
+    color: set-text-color($dark-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+}
+
+// Main nav
+#main-nav {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        padding: 0 1.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        border-bottom: 3px transparent solid;
+        transition: border-color 0.5s;
+        padding-bottom: 0.5rem;
+
+        &:hover {
+            border-color: $medium-color;
+        }
+
+        &.current {
+            border-color: $main-color;
+        }
+    }
+
+    .header-a {
+        color: #fff;
+        font-size: 2.2rem;
+        border: none;
+        transition: 0.2s ease-in;
+        padding-bottom: 0;
+    }
+
+    .header-a:hover {
+        color: $main-color;
+    }
+}
+
+// Header
+#header {
+    // Header Home
+    &-home {
+        background: $dark-color;
+        height: 5.5rem;
+        border-bottom: 3px solid $main-color;
+    }
+
+    // Header Inner, in case you want to do something specific to the home/inner headers
+    &-inner {
+        background: $dark-color;
+        height: 5.5rem;
+        border-bottom: 3px solid $main-color;
+    }
+}
+
+// Home Sections
+#home {
+    // Home A
+    &-a {
+        text-align: center;
+        background: $bg-image;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: cover;
+        height: 100vh;
+        color: #fff;
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            padding-bottom: 2rem;
+            padding-top: 20%;
+        }
+    }
+
+    // Home B
+    &-b {
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1.5rem;
+            text-align: center;
+
+            &-step {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 28px;
+                background: $main-color;
+                border-radius: 50%;
+                height: 15px;
+                width: 15px;
+                line-height: 15px;
+                padding: 1rem;
+                transition: all 1s;
+            }
+
+            &-icon {
+                border-radius: 50%;
+                background: $dark-color;
+                // Use the automatic color function declared in _config.scss
+                color: set-text-color($dark-color);
+                padding: 2rem;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                text-align: center;
+                position: relative;
+                transition: all 1s;
+
+                &:hover {
+                    background: $main-color;
+                    width: 90px;
+                    height: 90px;
+                    line-height: 90px;
+
+                    .process-step {
+                        background: $dark-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// About Sections
+#about {
+    // About A
+    &-a {
+        h4 {
+            padding-bottom: 10px;
+            margin: 1rem 0;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-areas:
+                "bioimage bio bio";
+            grid-gap: 1.2rem;
+        }
+
+        .bio-image {
+            grid-area: bioimage;
+        }
+
+        .bio {
+            grid-area: bio;
+            border-left: 3px solid $main-color;
+            padding: 0.8rem;
+        }
+    }
+
+    // About B
+    &-b {
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            li {
+                line-height: 2;
+                color: #fff;
+
+                &.stats-title {
+                    font-size: 1.5rem;
+                }
+
+                &.stats-number {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+
+            div {
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    // About C
+    &-c {
+        .progress {
+            overflow: hidden;
+            height: 20px;
+            background: $medium-color;
+            border-radius: 5px;
+            margin-bottom: 0.6rem;
+
+            div {
+                height: 100%;
+                color: #fff;
+                text-align: center;
+                position: relative;
+            }
+
+            // Animation to the bars
+            .bar {
+                position: relative;
+                bottom: 0;
+                transition: 3s ease-in-out;
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            // Show the colored bars. From invisible to visible when you scroll past them
+            .bar.show {
+                transform: none;
+                visibility: visible;
+                opacity: 1;
+                background: $main-color;
+            }
+        }
+    }
+}
+
+// Timeline Sections
+#timeline {
+    // Timeline A
+    &-a {
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #fff;
+            // Takes away the scroll-bar on the x-axis
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            background: #fff;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            padding-bottom: 10px;
+        }
+
+        h3,
+        p:not([class]) {
+            color: #fff;
+            text-align: left;
+        }
+
+        ul {
+            background: #fff;
+            padding: 50px 0;
+        }
+
+        // Creates timeline-line
+        ul li {
+            list-style: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 50px;
+            background: black;
+        }
+
+        // Boxes
+        ul li div {
+            position: relative;
+            bottom: 0;
+            width: 400px;
+            padding: 1rem;
+            background: $main-color;
+            visibility: hidden;
+            
+            opacity: 0;
+        }
+
+        // Right side (odd)
+        ul li:nth-child(odd) div {
+            left: 40px;
+            transform: translate(200px, 0);
+        }
+
+        // Left side (odd)
+        ul li:nth-child(even) div {
+            left: -434px;
+            transform: translate(-200px, 0);
+        }
+
+        // Dots
+        ul li:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 25px;
+            height: 25px;
+            background: $main-color;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            transition: background 0.5s ease-in-out;
+        }
+
+        // Arrows base
+        ul li div:before {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        // Right-side arrows. Made by 300 IQ CSS
+        ul li:nth-child(odd) div:before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent $main-color transparent transparent;
+        }
+
+        // Left-side arrows. Made by 300 IQ CSS
+        ul li:nth-child(even) div:before {
+            right: -15px;
+            border-width: 8px 0px 8px 16px;
+            border-color: transparent transparent transparent $main-color;
+        }
+
+        // Show boxes. From invisible boxes to visible boxes
+        ul li.show div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+            // Transition is put here to not show boxes fading out into hidden
+            transition: all 1s ease-in-out;
+        }
+    }
+}
+
+// Contact Sections
+#contact {
+    // Contact A
+    &-a {
+        .text-fields {
+            display: grid;
+            grid-template-areas:
+                "name email"
+                "subject phone"
+                "message message";
+            grid-gap: 1.2rem;
+            margin-bottom: 1.2rem;
+
+            // Grid areas
+            .name-input {
+                grid-area: name;
+            }
+            .subject-input {
+                grid-area: subject;
+            }
+            .email-input {
+                grid-area: email;
+            }
+            .phone-input {
+                grid-area: phone;
+            }
+            .message-input {
+                grid-area: message;
+                height: 100px;
+            }
+
+            .text-input {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        button[type="submit"] {
+            width: 50%;
+        }
+    }
+
+    // Contact B
+    &-b {
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+    }
+
+    // Contact C
+    &-c {
+        h1 {
+            text-align: center;
+            font-size: 4rem;
+        }
+    }
+}
+
+// Footer
+#main-footer {
+    background: $dark-color;
+    color: #fff;
+    height: 5rem;
+    border-top: 3px solid $main-color;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        height: 5rem;
+        align-items: center;
+
+        .social .fab {
+            margin-right: 1rem;
+            border: 2px #fff solid;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            padding: 0.5rem;
+
+            &:hover {
+                background: $main-color;
+            }
+        }
+    }
+}
+
+// Import media queries
+@import "media";

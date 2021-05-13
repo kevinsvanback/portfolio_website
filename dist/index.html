@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard html markup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Imports favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <!-- Imports all the icons that are used -->
+    <script src="https://kit.fontawesome.com/6e5270ffd8.js" crossorigin="anonymous"></script>
+    <!-- Imports the font from google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis" />
+    <!-- Links the CSS document -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Kevin Svanbäck | Front-end Web Developer</title>
+</head>
+
+<body>
+    <!-- Header Home -->
+    <header id="header-home">
+        <div class="container">
+            <nav id="main-nav">
+                <!-- KS logo that also acts like a "return to home"-button -->
+                <a class="header-a" href="index.html">KS</a>
+                <ul>
+                    <!-- Creates a line under the current page -->
+                    <li><a href="index.html" class="current">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Home A: Home Content -->
+    <section id="home-a">
+        <div>
+            <h1>
+                I Am Kevin the
+                <!-- The data that the JavaScript function uses -->
+                <span class="txt-type" data-wait="2000" data-words='["Front-End Developer"]'></span>
+            </h1>
+            <!-- A button that links to the the projects page -->
+            <a href="projects.html" class="btn-light">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Section Home B: Development Process -->
+    <section id="home-b" class="text-center py-2">
+        <div class="container">
+            <h2 class="section-title">
+                The Tools I Use For Development
+            </h2>
+            <!-- Reusable line under text -->
+            <div class="bottom-line"></div>
+            <p class="lead">
+                My front-end development is created using:
+            </p>
+            <div class="process">
+                <div>
+                    <!-- Icons imported from script in Head -->
+                    <i class="fab fa-html5 fa-4x process-icon my-2">
+                        <div class="process-step">1</div>
+                    </i>
+                    <h3>HTML</h3>
+                </div>
+                <div>
+                    <i class="fab fa-css3-alt fa-4x process-icon my-2">
+                        <div class="process-step">2</div>
+                    </i>
+                    <h3>CSS</h3>
+                </div>
+                <div>
+                    <i class="fab fa-js fa-4x process-icon my-2">
+                        <div class="process-step">3</div>
+                    </i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div>
+                    <i class="fab fa-react fa-4x process-icon my-2">
+                        <div class="process-step">4</div>
+                    </i>
+                    <h3>React</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="footer-content container">
+            <!-- Manual copyright mark -->
+            <p>Copyright &copy; 2021. All Right Reserved</p>
+            <div class="social">
+                <a href="https://www.instagram.com/kevinsvanback/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kevinsvanback/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript function that allows the typewriter effect on home page -->
+    <script src="js/typewriter.js"></script>
+</body>
+
+</html>
